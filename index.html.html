@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+     :root {
+            --color-primary: #2c043e;
+            --color-secondary: #a8334b;
+            --color-light: #f8f9fa;
+            --color-dark: #343a40;
+            --color-text: #333333;
+        }
+
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header { 
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      
+       background: rgb(249, 237, 237);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+             transition: transform 0.3s ease;
+    }
+
+        @media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .bio-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .quote-card {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+        }
+        
+        .card {
+            background: rgb(249, 237, 237);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: var(--color-primary);
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-light);
+        }
+        
+        .bio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .bio-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .fact-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .fact-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .language-meter {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+        
+        .hobby-tag {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .gallery-item {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .quote-card {
+            position: relative;
+            padding: 30px;
+            border-left: 5px solid var(--color-secondary);
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .quote-card:before {
+            content: '\201C';
+            font-size: 4rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: rgba(108, 99, 255, 0.1);
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+            font-style: normal;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: var(--color-text);
+            opacity: 0.7;
+        }
+        
+        .fun-fact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--color-secondary);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .fun-fact:hover {
+            transform: scale(1.1);
+        }
+        
+        .hidden-message {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 200px;
+        }
+        
+        .fun-fact:hover + .hidden-message {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome To My Space!</h1>
+        <p class="tagline">I share my thoughts, dreams, and feelings</p>
+    </header>
+    
+    <div class="container">
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div>
+                <!-- Bio Card -->
+                <div class="card bio-section">
+                    <img src="assets/photo_2025-07-14_15-17-06-removebg-preview.png" alt="Profile picture of me smiling in casual clothes against a colorful background" class="bio-pic">
+                    <h2>Who Am I?</h2>
+                    <ul class="fact-list">
+                        <li><strong>Name:</strong> Dian Arum Firnanda</li>
+                        <li><strong>Age:</strong> 21</li>
+                        <li><strong>From:</strong> Konawe Selatan</li>
+                        <li><strong>Living in:</strong> Kendari</li>
+                        <li><strong>Occupation:</strong> Part Time Overthinker</li>
+                    </ul>
+                </div>
+
+                 <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Halo, namaku Dian Arum Firnanda. Orang-orang panggil aku Dian, mama bapakku panggil aku Nanda, dan beberapa temanku panggil aku Nduta.  
+        <br> <p>Lahir di hari kamis. Saat itu ditengah malam tanggal 24 Juni ditahun 2004. Aku ini suku Jawa, tapi lahir dan besar di Konsel. Sekolah di sini, makan makanan sini, berteman sama orang sini, tapi tetep aja medoknya kethok, alias gak bisa diubah.</p> <br> <p> Nih, aku suka belajar bahasa untuk discover budaya dan perbedaanya. Bahasa Indonesia sebagai bahasa sehari-hari ketika komunikasi sama keluarga dan orang sekitar, sekaligus karena bahasa Indonesia adalah bahasa ibu aku jadinya paling mahir. Aku juga pakai bahasa Inggris sehari-hari untuk bicara dengan teman-teman penaku atau ketika lagi nulis. Saat ini, aku lagi belajar bahasa Spanyol dan Tagalog nih. Making swerte naman ako! ^^ </p>
+        <br><p>Aku akhir-akhir ini lagi seneng banget editing video/foto soal game yang aku mainin, namanya Sky:Childern Of The Light. Pemandangannya cantik banget dan gamenya interaktif, jadi banyak bahan dan ide untuk editingnnya.</p></br.>
+    </section>
+
+                <!-- Languages Card -->
+                <div class="card">
+                    <h2>Languages I Speak</h2>
+                    <div>
+                        <h3>Indonesia</h3>
+                        <div class="language-meter">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                        <h3>English</h3>
+                        <div class="language-meter">
+                            <div class="language-progress" style="width: 85%"></div>
+                        </div>
+                        <h3>Tagalog</h3>
+                        <div class="language-meter">
+                            <div class="language-progress" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+ <!-- Hobbies Card -->
+                <div class="card">
+                    <h2>What I Love Doing</h2>
+                    <p>The cycle of my life:</p>
+                    <div id="hobbies-container">
+                        <!-- Hobbies will be added by JavaScript -->
+                    </div>
+                    <p></p>
+                </div>
+                
+
+            <!-- Right Column -->
+            <div>
+                <!-- Gallery Card -->
+                <div class="card">
+                    <h2>My Favorite Pictures</h2>
+                    <div class="gallery-item">
+                        <img src="assets/photo_2025-07-15_22-05-23.jpg" alt=Beautiful Sunset>
+                        <p>Sunset in the hill. Cantik banget, bunga-bunga bermekaran waktu itu.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/photo_2025-07-15_22-05-31.jpg" alt="Wisteria">
+                        <p>Pohon wisteria di tengah hutan. Kalau liat ini berasa wangi wisterianya semerbak.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/photo_2025-07-15_22-05-36.jpg" alt="Group photo with friends laughing at a casual gathering surrounded by good food">
+                        <p>Gazebo in the middle of nowhere. Beneran secantik itu.</p>
+                    </div>
+                </div>
+                
+                <!-- Quotes Card -->
+                <div class="card">
+                    <h2>Words I Live By</h2>
+                    <div class="quote-card">
+                        <p>“Pain and suffering are always inevitable for a large intelligence and a deep heart. The really great men must, I think, have great sadness on earth.”</p>
+                        <div class="quote-author">— Fyodor Dostoevsky</div>
+                    </div>
+                    <div class="quote-card">
+                        <p>“You are the knife I turn inside myself; that is love. That, my dear, is love.”</p>
+                        <div class="quote-author">— Franz Kafka</div>
+                    </div>
+                    <div class="quote-card">
+                        <p>“People can tell you to keep your mouth shut, but that doesn't stop you from having your own opinion.”</p>
+                        <div class="quote-author">— Anne Frank</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Thanks for stopping by! Let's connect sometime.</p>
+        
+        <div class="social-links">
+            <a href="mailto:dianarumfirnanda246@gmail.com" class="social-icon">✉️ Email</a>
+             <a href="https://www.instagram.com/dian2406_?igsh=djM3aWdzNWdia215" class="social-icon">📸 Instagram</a>
+
+        </div>
+        
+        <p>&copy; 2025 All About Me</p>
+    </footer>
+    
+    <!-- Fun interactive element -->
+    <div class="fun-fact">?</div>
+    <div class="hidden-message">Psst... hover over the sections to see fun animations!</div>
+    
+    <script>
+        // Fill in hobbies
+        const hobbies = [
+            "Reading book",
+            "Photography",
+            "Singing",
+            "Riding",
+            "Video games",
+            "Learning languages",
+            "Writing",
+            "Video Editing"
+        ];
+        
+        const hobbiesContainer = document.getElementById('hobbies-container');
+        hobbies.forEach(hobby => {
+            const tag = document.createElement('div');
+            tag.className = 'hobby-tag';
+            tag.textContent = hobby;
+            hobbiesContainer.appendChild(tag);
+        });
+        
+        // Animate language meters on scroll
+        window.addEventListener('scroll', function() {
+            const languageMeters = document.querySelectorAll('.language-progress');
+            languageMeters.forEach(meter => {
+                const position = meter.getBoundingClientRect();
+                if (position.top < window.innerHeight) {
+                    meter.style.width = meter.style.width; // This triggers the animation
+                }
+            });
+        });
+        
+        // Trigger the animation once on page load
+        setTimeout(() => {
+            const languageMeters = document.querySelectorAll('.language-progress');
+            languageMeters.forEach(meter => {
+                meter.style.width = meter.style.width;
+            });
+        }, 500);
+        
+        // Fun fact button interaction
+        const funFactButton = document.querySelector('.fun-fact');
+        funFactButton.addEventListener('click', function() {
+            const funFacts = [
+                "I once met a celebrity but didn't realize it until later!",
+                "I can recite the alphabet backwards in under 10 seconds!",
+                "I have a collection of souvenirs from every country I've visited.",
+                "My signature dish is spaghetti carbonara.",
+                "I've been skydiving and would totally do it again!"
+            ];
+            
+            const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+            alert("Fun Fact: " + randomFact);
+        });
+    </script>
+</body>
+</html>
